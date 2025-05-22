@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Reporte Inspección Equipos Elevadores</title>
+<style>
+  body { font-family: Arial, sans-serif; max-width: 600px; margin: 30px auto; padding: 0 20px; }
+  h1 { text-align: center; color: #003366; }
+  label { display: block; margin-top: 15px; font-weight: bold; }
+  input, select, textarea { width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box; }
+  button { margin-top: 20px; padding: 10px 20px; background-color: #0055a5; color: white; border: none; cursor: pointer; }
+  button:hover { background-color: #003366; }
+</style>
+</head>
+<body>
+<h1>Reporte de Inspección</h1>
+<form id="inspectionForm">
+  <label for="equipmentId">ID del Equipo:</label>
+  <input type="text" id="equipmentId" name="equipmentId" placeholder="Ejemplo: ELEV-1234" required />
+
+  <label for="inspectionDate">Fecha de Inspección:</label>
+  <input type="date" id="inspectionDate" name="inspectionDate" required />
+
+  <label for="status">Estado del Equipo:</label>
+  <select id="status" name="status" required>
+    <option value="" disabled selected>Seleccione una opción</option>
+    <option value="OK">OK</option>
+    <option value="Requiere Mantenimiento">Requiere Mantenimiento</option>
+    <option value="Fuera de Servicio">Fuera de Servicio</option>
+  </select>
+
+  <label for="observations">Observaciones:</label>
+  <textarea id="observations" name="observations" rows="4" placeholder="Detalles adicionales..."></textarea>
+
+  <button type="submit">Enviar Reporte</button>
+</form>
+
+<script>
+  document.getElementById('inspectionForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Reporte enviado. (En esta versión de prueba solo se muestra este mensaje)');
+    this.reset();
+  });
+</script>
+</body>
+</html>
